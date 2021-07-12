@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +7,7 @@ public class PositonScroller : MonoBehaviour
     [SerializeField] private Transform target; //현재 게임에서는 두개의 배결이 서로가 타겟
     [SerializeField] private float moveSpeed = 3.0f;
 
-    [SerializeField] private float scrollRange = 11f;
+    [SerializeField] private float scrollRange = 10.48f;
     [SerializeField] private Vector3 moveDirection = Vector3.down;
 
     // Start is called before the first frame update

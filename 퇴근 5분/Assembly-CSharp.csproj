@@ -43,8 +43,12 @@
      <Compile Include="Assets\RCK 2.3\Scripts\VehicleDamage.cs" />
      <Compile Include="Assets\RCK 2.3\Skidmarks\Skidmarks Essentials\Skidmarks.cs" />
      <Compile Include="Assets\RCK 2.3\Skidmarks\WheelSkidmarks.cs" />
+     <Compile Include="Assets\Script\Enemy.cs" />
+     <Compile Include="Assets\Script\EnemySpawner.cs" />
+     <Compile Include="Assets\Script\Movement2D.cs" />
      <Compile Include="Assets\Script\PMove.cs" />
      <Compile Include="Assets\Script\PositonScroller.cs" />
+     <Compile Include="Assets\Script\StageData.cs" />
      <Compile Include="Assets\Simple 2D Platformer BE2\ReadMe\Scripts\ReadmeBE2.cs" />
      <None Include="Assets\RCK 2.3\Shaders\ReflectionBlurFresnel.shader" />
      <None Include="Assets\RCK 2.3\Standard Assets\Projectors\Guidelines.txt" />
@@ -628,6 +632,10 @@
       <Project>{c5e31c99-4e37-54e0-976f-a6d655bb8c54}</Project>
       <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.DeviceSimulator.Editor.csproj">
+      <Project>{2c0a560f-b6cd-b8fc-857a-e23dc2f2d1af}</Project>
+      <Name>Unity.DeviceSimulator.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.csproj">
       <Project>{e7122317-259f-d235-3318-c78154150a48}</Project>
       <Name>Unity.Mathematics</Name>
@@ -683,10 +691,6 @@
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{b7fc34a4-c2b9-8d3f-3b69-c6944627cdc3}</Project>
       <Name>UnityEditor.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.DeviceSimulator.Editor.csproj">
-      <Project>{2c0a560f-b6cd-b8fc-857a-e23dc2f2d1af}</Project>
-      <Name>Unity.DeviceSimulator.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

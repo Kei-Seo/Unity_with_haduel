@@ -4,46 +4,67 @@ using UnityEngine;
 
 public class LifeCycle : MonoBehaviour
 {
-    //ÃÊ±âÈ­ ¿µ¿ª
-    void Awake()
-    {
-        Debug.Log("ÇÃ·¹ÀÌ¾î µ¥ÀÌÅÍ°¡ ÁØºñµÇ¾ú½À´Ï´Ù.");
-    }
-
-    //È°¼ºÈ­ ¿µ¿ª
-    void OnEnable()
-    {
-        Debug.Log("ÇÃ·¹ÀÌ¾î°¡ ·Î±×ÀÎ Çß½À´Ï´Ù.")
-    }
-    
-    void Start()
-    {
-        Debug.Log("»ç³É ÁØºñ¸¦ ³¡³Â½À´Ï´Ù.");
-    }
-
-    void FixedUpdate()
-    {
-        Debug.Log("ÀÌµ¿~");
-    }
-
+   void Start()
+   {
+        Vector3 vec = new Vector3(
+            Input.GetAxis("Horizontal"),
+            Input.GetAxis("Vertical"),0); //ë²¡í„°ê°’
+        transform.Translate(vec);
+        
+   }
+   
+   
     void Update()
     {
-        Debug.Log("ÀÌµ¿")
+        if (Input.anyKeyDown)
+        {
+            Debug.Log("í”Œë ˆì´ì–´ê°€ ì•„ë¬´ í‚¤ë¥¼ ëˆŒë €ìŠµë‹ˆë‹¤.");
+        }
+        /*if (Input.anyKey)
+        {
+            Debug.Log("ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½Æ¹ï¿½ Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
+        }*/
+        if(Input.GetKeyDown(KeyCode.Return)){
+            Debug.Log("ì•„ì´íƒ¬ì„ êµ¬ë§¤í–ˆìŠµë‹ˆë‹¤.");
+        }
+        
+        if(Input.GetKey(KeyCode.LeftArrow)){
+            Debug.Log("ì™¼ìª½ìœ¼ë¡œ ì´ë™ì¤‘");
+        }
+
+        if(Input.GetKeyUp(KeyCode.RightArrow)){
+            Debug.Log("ì˜¤ë¥¸ìª½ìœ¼ë¡œ ì´ë™ì„ ë©ˆì¶”ì—ˆìŠµë‹ˆë‹¤.");
+        }
+
+        if(Input.GetMouseButtonDown(0)){
+            Debug.Log("ë¯¸ì‚¬ì¼ ë°œì‚¬");
+        }
+
+        if(Input.GetMouseButton(0)){
+            Debug.Log("ë¯¸ì‚¬ì¼ ëª¨ìœ¼ëŠ” ì¤‘");
+        }
+
+        if(Input.GetMouseButtonUp(0)){
+            Debug.Log("ë¯¸ì‚¬ì¼ ë°œì‚¬!!");
+        }
+
+        if(Input.GetButtonDown("Jump")){
+            Debug.Log("ì í”„!");
+        }
+
+        if(Input.GetButton("Jump")){
+            Debug.Log("ì í”„ ëª¨ìœ¼ëŠ”ì¤‘,,,");
+        }
+
+        if(Input.GetButton("Horizontal")){
+            Debug.Log("íš¡ ì´ë™ì¤‘" + Input.GetAxisRaw("Horizontal"));
+        }
+
+
     }
 
-    void OnDisable()
-    {
-        Debug.Log("ÇÃ·¹ÀÌ¾î°¡ ·Î±×¾Æ¿ô Çß½À´Ï´Ù.")
-    }
 
-    void LateUpdate()
-    {
-        Debug.Log("°æÇéÄ¡ È¹µæ")
-    }
 
-    void onDestory()
-    {
-        Debug.Log("ÇÃ·¹ÀÌ¾î µ¥ÀÌÅÍ¸¦ ÇØÃ¼ÇÏ°Ú½À´Ï´Ù.")
-    }
+
 
 }

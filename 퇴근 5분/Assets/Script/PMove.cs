@@ -50,7 +50,7 @@ public class PMove : MonoBehaviour
                     if (touchDif.x > 0 && Mathf.Abs(touchDif.y) < Mathf.Abs(touchDif.x))
                     {
                         Vector3 pos = this.transform.position;
-                        if (pos.x >= 1)
+                        if (pos.x >= 0.7f)
                         {
                             //이미 오른쪽이면 더 이상 움직일 수 없다.     
                         }
@@ -65,7 +65,7 @@ public class PMove : MonoBehaviour
                     else if (touchDif.x < 0 && Mathf.Abs(touchDif.y) < Mathf.Abs(touchDif.x))
                     {
                         Vector3 pos = this.transform.position;
-                        if (pos.x <= -1)
+                        if (pos.x <= -1.3f)
                         {
                             //이미 왼쪽이면 더 이상 움직일 수 없다.     
                         }
