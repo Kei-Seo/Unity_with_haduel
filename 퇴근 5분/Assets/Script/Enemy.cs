@@ -8,7 +8,13 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player")){
+            //플레이어 태그랑 충돌한다면 Object destroy
             Destroy(gameObject);
+            
+            GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+            gameManager.gameProcess = false;
+            
+
         }
     }
 

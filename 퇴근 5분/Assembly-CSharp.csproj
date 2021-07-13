@@ -45,8 +45,11 @@
      <Compile Include="Assets\RCK 2.3\Skidmarks\WheelSkidmarks.cs" />
      <Compile Include="Assets\Script\Enemy.cs" />
      <Compile Include="Assets\Script\EnemySpawner.cs" />
+     <Compile Include="Assets\Script\GameManager.cs" />
      <Compile Include="Assets\Script\Movement2D.cs" />
      <Compile Include="Assets\Script\PMove.cs" />
+     <Compile Include="Assets\Script\PlayerCrush.cs" />
+     <Compile Include="Assets\Script\PositionAutoDestoryer.cs" />
      <Compile Include="Assets\Script\PositonScroller.cs" />
      <Compile Include="Assets\Script\StageData.cs" />
      <Compile Include="Assets\Simple 2D Platformer BE2\ReadMe\Scripts\ReadmeBE2.cs" />
