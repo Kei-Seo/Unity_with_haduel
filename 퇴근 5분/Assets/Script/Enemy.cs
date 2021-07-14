@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,8 +11,9 @@ public class Enemy : MonoBehaviour
             //플레이어 태그랑 충돌한다면 Object destroy
             Destroy(gameObject);
             
-            GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-            gameManager.gameProcess = false;
+           // GameManager Manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+            GameManager.CanGameProcess = false;//충동하면 진행 false
+            
             
 
         }

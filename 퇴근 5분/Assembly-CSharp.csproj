@@ -48,7 +48,6 @@
      <Compile Include="Assets\Script\GameManager.cs" />
      <Compile Include="Assets\Script\Movement2D.cs" />
      <Compile Include="Assets\Script\PMove.cs" />
-     <Compile Include="Assets\Script\PlayerCrush.cs" />
      <Compile Include="Assets\Script\PositionAutoDestoryer.cs" />
      <Compile Include="Assets\Script\PositonScroller.cs" />
      <Compile Include="Assets\Script\StageData.cs" />

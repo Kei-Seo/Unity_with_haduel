@@ -541,9 +541,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressBar: {fileID: 1979862814}
-  maxValue: 180
-  RunMeter: 0
-  RunMeterText: {fileID: 1134621331}
+  maxValue: 35
+  remainTime: 300
+  remainTimeText: {fileID: 1134621331}
+  CanGameProcess: 0
 --- !u!212 &375405100
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1007,7 +1008,7 @@ GameObject:
   - component: {fileID: 1134621332}
   - component: {fileID: 1134621331}
   m_Layer: 5
-  m_Name: Meter
+  m_Name: Time
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1029,8 +1030,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 522.3, y: 750.4}
-  m_SizeDelta: {x: 514.6825, y: 107.10809}
+  m_AnchoredPosition: {x: 6.9, y: 728.9}
+  m_SizeDelta: {x: 875.7567, y: 107.10809}
   m_Pivot: {x: 0.50000006, y: 0.49999985}
 --- !u!114 &1134621331
 MonoBehaviour:
@@ -1064,7 +1065,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: M
+  m_Text: 'Time : 4:59:59'
 --- !u!222 &1134621332
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1209,7 +1210,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468073090}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
