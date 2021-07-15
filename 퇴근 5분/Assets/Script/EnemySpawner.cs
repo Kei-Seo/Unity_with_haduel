@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
@@ -10,20 +11,40 @@ public class EnemySpawner : MonoBehaviour
     private GameObject enemyPrefeb;
     [SerializeField]
     private float spawnTime;
-  
+    private bool onceInvokeSpwan = true; 
+
     // Start is called before the first frame update
     private void Start()
     {
        StartCoroutine("SpawnEnemy");     
         
     }
+
     
+    
+    void Update()
+    {
+        Debug.Log("once"+onceInvokeSpwan);
+        int runOnce = 0;
+        if(GameManager.CanGameProcess == true && onceInvokeSpwan == false)
+        {
+            onceInvokeSpwan = true;
+            StartCoroutine("SpawnEnemy");
+            Debug.Log("한번실행했는가?");
+        }
+
+        if(GameManager.CanGameProcess == false)
+        {
+            onceInvokeSpwan = false;
+        }
+
+    }
     
 
     // Update is called once per frame
     private IEnumerator SpawnEnemy()
     {
-        Debug.Log("탄다");
+        
         //Debug.Log(IsSpawnerOk);
         while(GameManager.CanGameProcess)
         {
