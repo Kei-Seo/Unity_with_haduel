@@ -45,15 +45,43 @@ public class GameManager : MonoBehaviour
             Application.Quit();
         }
         
+        //남은 시간 계산
         remainTime -= Time.deltaTime * 8;
-        minTime = remainTime / 60;
-        secTime = remainTime % 60;
-        Debug.Log(CanGameProcess);
+        minTime = remainTime / 60; //분
+        secTime = remainTime % 60; //초
+        //GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        EnemySpawner enemySpawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
+
+        
+            if(remainTime<60 && remainTime>0)
+            {
+                enemySpawner.spawnTime = 0.4f;
+            }
+            else if( remainTime<120 && remainTime>=60)
+            {
+                enemySpawner.spawnTime = 0.44f;
+            }
+            else if(remainTime<180 && remainTime>=120)
+            {
+                enemySpawner.spawnTime = 0.48f;
+            }
+            else if(remainTime<240 && remainTime>=180)
+            {
+                enemySpawner.spawnTime = 0.52f;
+            }
+            else if(remainTime<300 && remainTime>=240)
+            {
+                 enemySpawner.spawnTime = 0.6f;
+            }
+
+
+        
+
+        
         if (CanGameProcess)
         {
             onceInvoke = true;
             //ProgressBar
-            
             progressBar.value += Time.deltaTime; //progressbar value plus
             if(progressBar.value == maxValue){
                 clearPanel.GetComponent<Image>().enabled = true;

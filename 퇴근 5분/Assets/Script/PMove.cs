@@ -12,13 +12,16 @@ public class PMove : MonoBehaviour
     private Vector2 touchDif;
     private float swipeSensitivity;
 
+    private bool IsJump = false;
+    public float jumpForce = 5f;
 
+    private Rigidbody2D rigidbody;
 
     // Rigidbody2D rigid; 
     // // Start is called before the first frame update
     void Start()
     {
-
+        rigidbody = GetComponent<Rigidbody2D>();
     }
     // // Update is called once per frame
     void Update()
@@ -27,6 +30,22 @@ public class PMove : MonoBehaviour
 
         Swipe1();
     }
+
+    void FixedUpdate ()
+    {
+       
+        if(IsJump)
+        {
+            IsJump = false;
+            //GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, jumpForce, 0f));
+            rigidbody.velocity = Vector2.zero;
+            Vector2 JumpVelocity = new Vector2(0, jumpForce);
+            rigidbody.AddForce(JumpVelocity, ForceMode2D.Impulse);
+
+        }
+    }
+
+
 
     public void Swipe1()
     {
@@ -82,7 +101,7 @@ public class PMove : MonoBehaviour
                     //터치.
                     else
                     {
-
+                        IsJump = true;  
                         Debug.Log("touch");
                     }
                 }

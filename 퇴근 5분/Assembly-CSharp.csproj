@@ -43,7 +43,8 @@
      <Compile Include="Assets\RCK 2.3\Scripts\VehicleDamage.cs" />
      <Compile Include="Assets\RCK 2.3\Skidmarks\Skidmarks Essentials\Skidmarks.cs" />
      <Compile Include="Assets\RCK 2.3\Skidmarks\WheelSkidmarks.cs" />
-     <Compile Include="Assets\Script\Enemy.cs" />
+     <Compile Include="Assets\Script\ColliderAnimal.cs" />
+     <Compile Include="Assets\Script\DropHole.cs" />
      <Compile Include="Assets\Script\EnemySpawner.cs" />
      <Compile Include="Assets\Script\GameManager.cs" />
      <Compile Include="Assets\Script\Movement2D.cs" />
