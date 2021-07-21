@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7757524242293067028}
   - component: {fileID: 8917250178437379123}
   - component: {fileID: 185777552436922968}
+  - component: {fileID: -2928994226011422322}
   - component: {fileID: 2396107170729283415}
-  - component: {fileID: 8238125212503746229}
   - component: {fileID: 7889575102847441659}
   m_Layer: 0
   m_Name: Enemy2
@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21bb274073153b84784f62ebdf49e3f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  moveDirection: {x: 0, y: 0, z: 0}
+  moveSpeed: 5
+  moveDirection: {x: 0, y: -1, z: 0}
 --- !u!212 &185777552436922968
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -99,6 +99,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-2928994226011422322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8250309610990747785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb30e94fa23414438547fb0b38aeff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2396107170729283415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,18 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageData: {fileID: 11400000, guid: e2dd6582687ddd846aa0be454eeb6f02, type: 2}
---- !u!114 &8238125212503746229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8250309610990747785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7227fcd16d9d45479a1fbc0066e1581, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &7889575102847441659
 CircleCollider2D:
   m_ObjectHideFlags: 0

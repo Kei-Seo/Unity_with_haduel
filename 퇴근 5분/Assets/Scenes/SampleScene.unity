@@ -232,7 +232,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -438,13 +438,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352276157}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.0033475247, y: -0, z: -0, w: 0.9999944}
   m_LocalPosition: {x: -1.282, y: 0.02, z: 0}
   m_LocalScale: {x: 0.47177407, y: 0.540314, z: 1}
   m_Children: []
   m_Father: {fileID: 786270579}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.384, y: 0, z: 0}
 --- !u!212 &352276159
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1700,9 +1700,15 @@ MonoBehaviour:
   stageData: {fileID: 11400000, guid: e2dd6582687ddd846aa0be454eeb6f02, type: 2}
   enemyPrefeb: {fileID: 3638763803705639101, guid: d5fc3b77df60daf40be052851dd8ceae,
     type: 3}
-  holePrefeb: {fileID: 8250309610990747785, guid: 3f9a649203ce96345bd868e3400031c3,
+  MonkeyPrefeb: {fileID: 1120821854390191429, guid: 55ff5acfcc04f904b9646e0310264129,
+    type: 3}
+  BananaPrefeb: {fileID: 7014874983397395090, guid: ab6a4f30312048f4aa1e1c0315fc1300,
     type: 3}
   spawnTime: 0.6
+  Target: {fileID: 0}
+  firingAngle: 45
+  gravity: 9.8
+  Projectile: {fileID: 0}
 --- !u!212 &1797173541
 SpriteRenderer:
   m_ObjectHideFlags: 0

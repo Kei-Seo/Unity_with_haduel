@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class PMove : MonoBehaviour
+public class PMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     // Start is called before the first frame update
     float moveL, moveR;
@@ -10,6 +11,7 @@ public class PMove : MonoBehaviour
     private Vector2 touchBeganPos;
     private Vector2 touchEndedPos;
     private Vector2 touchDif;
+    private float TouchTime;
     private float swipeSensitivity;
 
     private bool IsJump = false;
@@ -17,33 +19,39 @@ public class PMove : MonoBehaviour
 
     private Rigidbody2D rigidbody;
 
+    public static bool Isjump = false;
+
+    private bool isBtnDown = false;
     // Rigidbody2D rigid; 
     // // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        Isjump = false;
     }
     // // Update is called once per frame
     void Update()
     {
-
-
+        if (isBtnDown)
+        {
+            Debug.Log("BTN DOWN");
+        }
         Swipe1();
     }
 
-    void FixedUpdate ()
-    {
-       
-        if(IsJump)
-        {
-            IsJump = false;
-            //GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, jumpForce, 0f));
-            rigidbody.velocity = Vector2.zero;
-            Vector2 JumpVelocity = new Vector2(0, jumpForce);
-            rigidbody.AddForce(JumpVelocity, ForceMode2D.Impulse);
+    // void FixedUpdate ()
+    // {
 
-        }
-    }
+    //     if(IsJump)
+    //     {
+    //         IsJump = false;
+    //         //GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, jumpForce, 0f));
+    //         rigidbody.velocity = Vector2.zero;
+    //         Vector2 JumpVelocity = new Vector2(0, jumpForce);
+    //         rigidbody.AddForce(JumpVelocity, ForceMode2D.Impulse);
+
+    //     }
+    // }
 
 
 
@@ -54,7 +62,7 @@ public class PMove : MonoBehaviour
             if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
-
+                TouchTime = Time.time;
 
                 if (touch.phase == TouchPhase.Began)
                 {
@@ -98,10 +106,28 @@ public class PMove : MonoBehaviour
                             }
                         }
                     }
+                    // else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
+                    // {
+                    //     if (Time.time - TouchTime <= 0.5)
+                    //     {
+                    //         Debug.Log("1");
+                    //         //GameManager.isSpeedUp = true;
+                    //         Movement2D.moveSpeed = 20;
+
+                    //         //do stuff as a tap​
+                    //     }
+                    //     else
+                    //     {
+                    //         Debug.Log("2");
+
+                    //         // this is a long press or drag​
+                    //     }
+                        
+                    // }
                     //터치.
                     else
                     {
-                        IsJump = true;  
+                        IsJump = true;
                         Debug.Log("touch");
                     }
                 }
@@ -109,5 +135,17 @@ public class PMove : MonoBehaviour
         }
 
         //스와이프
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        // Debug.Log("버튼을 눌렀습니다.");
+        isBtnDown = true;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        //Debug.Log("버튼을 똈습니다..");
+        isBtnDown = false;
     }
 }

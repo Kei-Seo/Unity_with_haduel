@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class ColliderAnimal : MonoBehaviour
 {
     GameObject player;
     // Start is called before the first frame update
@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     {
         if(collision.gameObject == player){
             //플레이어 태그랑 충돌한다면 Object destroy
-        
+            Debug.Log(GameManager.CanGameProcess);
             GameManager.CanGameProcess = false;//충동하면 진행 false
             Destroy(gameObject);
             

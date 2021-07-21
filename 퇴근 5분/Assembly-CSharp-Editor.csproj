@@ -674,6 +674,10 @@
       <Project>{991CE3C5-374E-E054-976F-A6D655BB8C54}</Project>
       <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.DeviceSimulator.Editor.csproj">
+      <Project>{0F560A2C-CDB6-FCB8-857A-E23DC2F2D1AF}</Project>
+      <Name>Unity.DeviceSimulator.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.csproj">
       <Project>{172312E7-9F25-35D2-3318-C78154150A48}</Project>
       <Name>Unity.Mathematics</Name>
@@ -729,10 +733,6 @@
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{A434FCB7-B9C2-3F8D-3B69-C6944627CDC3}</Project>
       <Name>UnityEditor.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.DeviceSimulator.Editor.csproj">
-      <Project>{0F560A2C-CDB6-FCB8-857A-E23DC2F2D1AF}</Project>
-      <Name>Unity.DeviceSimulator.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

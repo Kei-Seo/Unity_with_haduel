@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     private GameObject gameOverPanel;
     private GameObject clearPanel;
     private bool onceInvoke;
+    public static bool isSpeedUp;
     // Update is called once per frame
     void Start()
     {
@@ -53,25 +54,44 @@ public class GameManager : MonoBehaviour
         EnemySpawner enemySpawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
 
         
-            if(remainTime<60 && remainTime>0)
+            if(progressBar.value<25 && progressBar.value>=20)
             {
+                if(!isSpeedUp){
+                    Movement2D.moveSpeed = 9;
+                }
                 enemySpawner.spawnTime = 0.4f;
             }
-            else if( remainTime<120 && remainTime>=60)
+            else if( progressBar.value<20 && progressBar.value>=15)
             {
-                enemySpawner.spawnTime = 0.44f;
+                if(!isSpeedUp){
+                    Movement2D.moveSpeed = 8;
+                }
+                //Movement2D.moveSpeed = 8;
+                enemySpawner.spawnTime = 0.45f;
             }
-            else if(remainTime<180 && remainTime>=120)
+            else if(progressBar.value<15 && progressBar.value>=10)
             {
-                enemySpawner.spawnTime = 0.48f;
+                if(!isSpeedUp){
+                    Movement2D.moveSpeed = 7;
+                }
+                //Movement2D.moveSpeed = 7;
+                enemySpawner.spawnTime = 0.50f;
             }
-            else if(remainTime<240 && remainTime>=180)
+            else if(progressBar.value<10 && progressBar.value>=5)
             {
-                enemySpawner.spawnTime = 0.52f;
+                if(!isSpeedUp){
+                    Movement2D.moveSpeed = 6;
+                }
+                //Movement2D.moveSpeed = 6;
+                enemySpawner.spawnTime = 0.55f;
             }
-            else if(remainTime<300 && remainTime>=240)
+            else if(progressBar.value<5 && progressBar.value>=0)
             {
-                 enemySpawner.spawnTime = 0.6f;
+                if(!isSpeedUp){
+                    Movement2D.moveSpeed = 5;
+                }
+                //ovement2D.moveSpeed = 5;
+                enemySpawner.spawnTime = 0.6f;
             }
 
 
@@ -97,7 +117,6 @@ public class GameManager : MonoBehaviour
             {
                 onceInvoke = false;
                 StartCoroutine("delayTime");
-                Debug.Log(CanGameProcess);
             }
 
         }
@@ -126,9 +145,9 @@ public class GameManager : MonoBehaviour
 
     IEnumerator delayTime()
     {
-        Debug.Log("기다릴게여~");
+        
         yield return new WaitForSeconds(1);
         CanGameProcess = true;
-        Debug.Log("기다릴게여~2");
+     ;
     }
 }

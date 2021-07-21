@@ -43,6 +43,7 @@
      <Compile Include="Assets\RCK 2.3\Scripts\VehicleDamage.cs" />
      <Compile Include="Assets\RCK 2.3\Skidmarks\Skidmarks Essentials\Skidmarks.cs" />
      <Compile Include="Assets\RCK 2.3\Skidmarks\WheelSkidmarks.cs" />
+     <Compile Include="Assets\Script\Clear.cs" />
      <Compile Include="Assets\Script\ColliderAnimal.cs" />
      <Compile Include="Assets\Script\DropHole.cs" />
      <Compile Include="Assets\Script\EnemySpawner.cs" />
@@ -52,6 +53,8 @@
      <Compile Include="Assets\Script\PositionAutoDestoryer.cs" />
      <Compile Include="Assets\Script\PositonScroller.cs" />
      <Compile Include="Assets\Script\StageData.cs" />
+     <Compile Include="Assets\Script\ThrowBanana.cs" />
+     <Compile Include="Assets\Script\TimeAutoDestoryer.cs" />
      <Compile Include="Assets\Simple 2D Platformer BE2\ReadMe\Scripts\ReadmeBE2.cs" />
      <None Include="Assets\RCK 2.3\Shaders\ReflectionBlurFresnel.shader" />
      <None Include="Assets\RCK 2.3\Standard Assets\Projectors\Guidelines.txt" />
