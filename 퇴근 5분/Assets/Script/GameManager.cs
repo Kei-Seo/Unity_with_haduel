@@ -21,7 +21,8 @@ public class GameManager : MonoBehaviour
 
     private float minTime;
     private float secTime;
-
+    
+    [SerializeField] StageManager theSM;
     private GameObject gameOverPanel;
     private GameObject clearPanel;
     private bool onceInvoke;
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
             //게임 종료
             gameOverPanel.GetComponent<Image>().enabled = true;
             Time.timeScale = 0.0F;
+            Debug.Log("시간이 멈ㅊㄴ다");
             Application.Quit();
         }
         
@@ -52,59 +54,21 @@ public class GameManager : MonoBehaviour
         secTime = remainTime % 60; //초
         //GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         EnemySpawner enemySpawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
-
+        if(Movement2D.moveSpeed < 9){
+            Movement2D.moveSpeed += (Time.deltaTime/5);
+        }
         
-            if(progressBar.value<25 && progressBar.value>=20)
-            {
-                if(!isSpeedUp){
-                    Movement2D.moveSpeed = 9;
-                }
-                enemySpawner.spawnTime = 0.4f;
-            }
-            else if( progressBar.value<20 && progressBar.value>=15)
-            {
-                if(!isSpeedUp){
-                    Movement2D.moveSpeed = 8;
-                }
-                //Movement2D.moveSpeed = 8;
-                enemySpawner.spawnTime = 0.45f;
-            }
-            else if(progressBar.value<15 && progressBar.value>=10)
-            {
-                if(!isSpeedUp){
-                    Movement2D.moveSpeed = 7;
-                }
-                //Movement2D.moveSpeed = 7;
-                enemySpawner.spawnTime = 0.50f;
-            }
-            else if(progressBar.value<10 && progressBar.value>=5)
-            {
-                if(!isSpeedUp){
-                    Movement2D.moveSpeed = 6;
-                }
-                //Movement2D.moveSpeed = 6;
-                enemySpawner.spawnTime = 0.55f;
-            }
-            else if(progressBar.value<5 && progressBar.value>=0)
-            {
-                if(!isSpeedUp){
-                    Movement2D.moveSpeed = 5;
-                }
-                //ovement2D.moveSpeed = 5;
-                enemySpawner.spawnTime = 0.6f;
-            }
-
-
         
 
-        
         if (CanGameProcess)
         {
             onceInvoke = true;
             //ProgressBar
-            progressBar.value += Time.deltaTime; //progressbar value plus
+            progressBar.value +=  Movement2D.moveSpeed; //progressbar value plus
             if(progressBar.value == maxValue){
                 clearPanel.GetComponent<Image>().enabled = true;
+                theSM.ShowClearUI();
+                Debug.Log("멈춘다.");
                 Time.timeScale = 0.0F;
                 Application.Quit();
             }
@@ -148,6 +112,6 @@ public class GameManager : MonoBehaviour
         
         yield return new WaitForSeconds(1);
         CanGameProcess = true;
-     ;
+     
     }
 }

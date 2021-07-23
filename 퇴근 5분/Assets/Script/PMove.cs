@@ -14,8 +14,8 @@ public class PMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private float TouchTime;
     private float swipeSensitivity;
 
-    private bool IsJump = false;
-    public float jumpForce = 5f;
+    public static bool IsSlide = false;
+   
 
     private Rigidbody2D rigidbody;
 
@@ -27,37 +27,20 @@ public class PMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        Isjump = false;
+        IsSlide = false;
     }
     // // Update is called once per frame
     void Update()
     {
-        if (isBtnDown)
-        {
-            Debug.Log("BTN DOWN");
-        }
+        
         Swipe1();
     }
 
-    // void FixedUpdate ()
-    // {
-
-    //     if(IsJump)
-    //     {
-    //         IsJump = false;
-    //         //GetComponent<Rigidbody2D>().AddForce(new Vector3(0f, jumpForce, 0f));
-    //         rigidbody.velocity = Vector2.zero;
-    //         Vector2 JumpVelocity = new Vector2(0, jumpForce);
-    //         rigidbody.AddForce(JumpVelocity, ForceMode2D.Impulse);
-
-    //     }
-    // }
-
-
+    
 
     public void Swipe1()
     {
-        if (GameManager.CanGameProcess)
+        if (GameManager.CanGameProcess && !IsSlide)
         {
             if (Input.touchCount > 0)
             {
@@ -127,7 +110,7 @@ public class PMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                     //터치.
                     else
                     {
-                        IsJump = true;
+                        
                         Debug.Log("touch");
                     }
                 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement2D : MonoBehaviour
 {
     [SerializeField]
-    public static float moveSpeed = 0.0f;
+    public static float moveSpeed = 5f;
     [SerializeField]
     private Vector3 moveDirection = Vector3.zero;
 
