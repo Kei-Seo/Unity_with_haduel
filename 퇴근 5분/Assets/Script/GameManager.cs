@@ -24,14 +24,39 @@ public class GameManager : MonoBehaviour
     
     [SerializeField] StageManager theSM;
     private GameObject gameOverPanel;
-    private GameObject clearPanel;
+  
     private bool onceInvoke;
-    public static bool isSpeedUp;
+    GameObject player;
+    Animator animator;
+
+    public GameObject next_button;
+    public GameObject[] Stages;
+    public int stageIndex;
+   
     // Update is called once per frame
+
+    public void NextStage()
+    {
+        if(stageIndex < Stages.Length-1){
+            Stages[stageIndex].SetActive(false);
+            stageIndex++;
+            Stages[stageIndex].SetActive(false);
+        }
+        else{
+            Time.timeScale = 0;
+        }
+        
+
+    }
+
+
     void Start()
     {
+        theSM.ShowNoneClearUI();
+        player = GameObject.FindGameObjectWithTag("Player");
+        animator = player.GetComponent<Animator>();
         gameOverPanel = GameObject.Find("GameOver");
-        clearPanel = GameObject.Find("Clear");
+        //clearPanel = GameObject.Find("Clear");
         CanGameProcess = true;
         onceInvoke = true;
         progressBar.maxValue = maxValue; //progressbar max range
@@ -55,7 +80,7 @@ public class GameManager : MonoBehaviour
         //GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         EnemySpawner enemySpawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
         if(Movement2D.moveSpeed < 9){
-            Movement2D.moveSpeed += (Time.deltaTime/5);
+            Movement2D.moveSpeed += (Time.deltaTime);
         }
         
         
@@ -66,11 +91,12 @@ public class GameManager : MonoBehaviour
             //ProgressBar
             progressBar.value +=  Movement2D.moveSpeed; //progressbar value plus
             if(progressBar.value == maxValue){
-                clearPanel.GetComponent<Image>().enabled = true;
+                //게임 클리어
+                //clearPanel.GetComponent<Image>().enabled = true;
                 theSM.ShowClearUI();
-                Debug.Log("멈춘다.");
+               // Debug.Log("멈춘다.");
                 Time.timeScale = 0.0F;
-                Application.Quit();
+               // Application.Quit();
             }
            
             //remain time
@@ -112,6 +138,8 @@ public class GameManager : MonoBehaviour
         
         yield return new WaitForSeconds(1);
         CanGameProcess = true;
+        PMove.IsSlide = false;
+        animator.SetBool("isBanana", false);
      
     }
 }

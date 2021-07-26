@@ -19,7 +19,7 @@ public class PMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private Rigidbody2D rigidbody;
 
-    public static bool Isjump = false;
+    public static bool Isjump ;
 
     private bool isBtnDown = false;
     // Rigidbody2D rigid; 
@@ -32,7 +32,7 @@ public class PMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     // // Update is called once per frame
     void Update()
     {
-        
+        ///Debug.Log(IsSlide);
         Swipe1();
     }
 
@@ -69,7 +69,7 @@ public class PMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                             else
                             {
                                 transform.Translate(1.3f, 0, 0);
-                                Debug.Log("right");
+                               // Debug.Log("right");
 
                             }
 
@@ -84,7 +84,7 @@ public class PMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                             else
                             {
                                 transform.Translate(-1.3f, 0, 0);
-                                Debug.Log("left");
+                                //Debug.Log("left");
 
                             }
                         }
@@ -111,7 +111,7 @@ public class PMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                     else
                     {
                         
-                        Debug.Log("touch");
+                       // Debug.Log("touch");
                     }
                 }
             }

@@ -30,13 +30,14 @@ public class EnemySpawner : MonoBehaviour
     private bool IsSpawnMonkey;
 
     // Start is called before the first frame update
-    private void Start()
+    void Start()
     {
 
         IsSpawnEnemy = true;
         throwBanana = false;
         IsSpawnMonkey = true;
         StartCoroutine("SpawnEnemy");
+        StartCoroutine("SpawnMonkey");
 
     }
 
@@ -93,22 +94,24 @@ public class EnemySpawner : MonoBehaviour
             if (IsSpawnEnemy)
             {
                 StartCoroutine("SpawnEnemy");
-            }
-            if (IsSpawnMonkey)
-            {
-                IsSpawnMonkey = false;
-                int decideSpwanMonkey = Random.Range(0, 3);
-                switch (decideSpwanMonkey)
+
+                if (IsSpawnMonkey)
                 {
-                    case 0:
-                        StartCoroutine("SpawnMonkey");
-                        break;
-                    case 1:
-                        StartCoroutine("SpawnMonkey");
-                        break;
-                    case 2:
-                        StartCoroutine("SpawnMonkey");
-                        break;
+                    IsSpawnMonkey = false;
+                    int decideSpwanMonkey = Random.Range(0, 3);
+                    switch (decideSpwanMonkey)
+                    {
+                        case 0:
+                            //StartCoroutine("SpawnMonkey");
+                            break;
+                        case 1:
+                            //StartCoroutine("SpawnMonkey");
+                            break;
+                        case 2:
+                            StartCoroutine("SpawnMonkey");
+                            break;
+                    }
+
                 }
 
             }
@@ -149,6 +152,7 @@ public class EnemySpawner : MonoBehaviour
             Instantiate(BananaPrefeb, new Vector3(positionX, positionY + 2f, 0.0f), Quaternion.identity);
             //StartCoroutine(MoveTo(BananaPrefeb, toVec));
             yield return new WaitForSeconds(spawnTime + 2);
+            IsSpawnMonkey = true;
 
         }
 
