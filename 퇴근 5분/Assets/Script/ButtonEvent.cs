@@ -5,11 +5,12 @@ using UnityEngine;
 public class ButtonEvent : MonoBehaviour
 {
   
-    public GameObject button;
+    
     private GameManager gameManager; 
+   
     public void inVokeNextStage()
     {
-        Debug.Log("여기서 멈췄다.");
+        //Debug.Log("여기서 멈췄다.");
         GameObject.Find("GameManager").GetComponent<GameManager>().NextStage();
     }
 }

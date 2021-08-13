@@ -19,8 +19,7 @@ public class PMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private Rigidbody2D rigidbody;
 
-    public static bool Isjump ;
-
+   
     private bool isBtnDown = false;
     // Rigidbody2D rigid; 
     // // Start is called before the first frame update
@@ -32,7 +31,6 @@ public class PMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     // // Update is called once per frame
     void Update()
     {
-        ///Debug.Log(IsSlide);
         Swipe1();
     }
 
@@ -89,25 +87,7 @@ public class PMove : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                             }
                         }
                     }
-                    // else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
-                    // {
-                    //     if (Time.time - TouchTime <= 0.5)
-                    //     {
-                    //         Debug.Log("1");
-                    //         //GameManager.isSpeedUp = true;
-                    //         Movement2D.moveSpeed = 20;
-
-                    //         //do stuff as a tap​
-                    //     }
-                    //     else
-                    //     {
-                    //         Debug.Log("2");
-
-                    //         // this is a long press or drag​
-                    //     }
-                        
-                    // }
-                    //터치.
+            
                     else
                     {
                         

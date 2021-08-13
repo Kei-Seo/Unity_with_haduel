@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PositionAutoDestoryer : MonoBehaviour
 {
+    // 화면 밖으로 벗어난다면 prefeb을 제거하는 스크립트
+    //
     // Start is called before the first frame update
     [SerializeField]
     private StageData stageData;
